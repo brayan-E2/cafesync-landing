@@ -1,0 +1,597 @@
+{
+ "resumen": {
+  "url": "http://localhost:8765/index.html",
+  "fecha": "2026-11-19 15:42",
+  "pruebas": 60,
+  "cumple": 60,
+  "hu_probadas": 30,
+  "hu_cumplen": 30,
+  "duracion_s": 25.0
+ },
+ "resultados": [
+  {
+   "id": "PA-01",
+   "hu": "HU-001",
+   "escenario": "E1 Foto analizada correctamente (CA01-CA03)",
+   "accion": "Elegir foto clara de hoja con manchas, revisar vista previa y pulsar \"Analizar\"",
+   "esperado": "Se muestra vista previa y luego el posible problema identificado",
+   "obtenido": "Input acepta cámara/galería (image/*|environment); vista previa visible; resultado: \"Posible roya amarilla\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-02",
+   "hu": "HU-001",
+   "escenario": "E2 Foto de baja calidad",
+   "accion": "Analizar una foto borrosa y luego una foto oscura",
+   "esperado": "No se procesa la imagen y se pide tomar una nueva foto",
+   "obtenido": "Borrosa: \"La foto está borrosa. Acércate un poco, mantén el celular quieto y toma una nueva foto.\" · Oscura: \"La foto está muy oscura. Toma una nueva foto con luz de día, sin sombra sobre la hoja.\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-03",
+   "hu": "HU-002",
+   "escenario": "E1 Riesgo alto identificado (CA01-CA03)",
+   "accion": "Consultar el resultado del diagnóstico de una hoja con muchas manchas",
+   "esperado": "Riesgo \"Alto\" en color de alerta, con texto, y sugerencia de intervención inmediata",
+   "obtenido": "Etiqueta \"Riesgo alto\" (clase risk risk-alto); urgencia \"Inmediata\"; acción sugerida de intervenir hoy",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-04",
+   "hu": "HU-004",
+   "escenario": "E1 Recomendaciones disponibles (CA01-CA02)",
+   "accion": "Pulsar \"Ver recomendaciones\" tras un diagnóstico de roya",
+   "esperado": "Se muestran pasos recomendados en lenguaje claro",
+   "obtenido": "4 pasos numerados; primer paso: \"Marca las plantas afectadas con una cinta para no perderlas de vista.\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-05",
+   "hu": "HU-016",
+   "escenario": "E1 Riesgo alto (CA01-CA03)",
+   "accion": "Consultar recomendaciones con riesgo alto",
+   "esperado": "Urgencia \"Inmediata\" junto al nivel de riesgo y acciones prioritarias",
+   "obtenido": "Recomendaciones muestran \"Riesgo alto\" y \"Urgencia: Inmediata\" en la misma vista",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-06",
+   "hu": "HU-011",
+   "escenario": "E1 Explicación disponible (CA01-CA03)",
+   "accion": "Pulsar \"Más información\" sobre roya amarilla",
+   "esperado": "Explicación sencilla con síntomas, causas e imagen de referencia",
+   "obtenido": "Muestra descripción, síntomas, causas, daño e imagen con texto alternativo",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-07",
+   "hu": "HU-002",
+   "escenario": "E2 Riesgo bajo identificado",
+   "accion": "Consultar el diagnóstico de una hoja con pocas manchas",
+   "esperado": "Riesgo \"Bajo\" y sugerencia de mantener en observación",
+   "obtenido": "Etiqueta \"Riesgo bajo\"; sugiere mantener la planta en observación",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-08",
+   "hu": "HU-016",
+   "escenario": "E2 Riesgo bajo",
+   "accion": "Consultar recomendaciones con riesgo bajo",
+   "esperado": "Urgencia \"Monitoreo\" y seguir observando la planta",
+   "obtenido": "Urgencia \"Monitoreo\"; recomienda mantener en observación",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-09",
+   "hu": "HU-004",
+   "escenario": "E2 Diagnóstico incierto (CA03)",
+   "accion": "Analizar una foto sin hoja reconocible y pulsar \"Ver recomendaciones\"",
+   "esperado": "Recomendación general y sugerencia de consultar a un técnico",
+   "obtenido": "Resultado \"No pudimos identificar el problema con seguridad\"; recomienda consultar a un técnico",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-10",
+   "hu": "HU-011",
+   "escenario": "E2 Información no disponible",
+   "accion": "Pulsar \"Más información\" sobre un problema sin ficha (mancha de hierro)",
+   "esperado": "Mensaje de información no disponible y sugerencia de consultar a un técnico",
+   "obtenido": "Mensaje: \"La información sobre este problema aún no está disponible. Consulta a un técnico de tu coo…\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-11",
+   "hu": "HU-003",
+   "escenario": "E2 Condiciones normales",
+   "accion": "Enviar lectura de 20 °C y 72 % en La Esperanza",
+   "esperado": "No se genera alerta y la parcela se mantiene en estado normal",
+   "obtenido": "Notificaciones 1→1; estado \"normal\"; aviso: \"La Esperanza: Condiciones dentro del rango seguro. No se generó ninguna alerta; …\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-12",
+   "hu": "HU-003",
+   "escenario": "E1 Condiciones de riesgo detectadas (CA01-CA03)",
+   "accion": "Enviar lectura de 22 °C y 93 % en La Esperanza",
+   "esperado": "Se envía alerta con la condición de riesgo y la plaga que podría favorecer",
+   "obtenido": "Nueva notificación: \"Clima favorable para roya en La Esperanza\" con humedad, temperatura y roya amarilla",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-13",
+   "hu": "HU-015",
+   "escenario": "E1 Cambio importante detectado (CA01-CA02)",
+   "accion": "Enviar lectura con humedad 21 puntos mayor que la anterior",
+   "esperado": "Notificación que indica qué cambió y en qué parcela",
+   "obtenido": "Notificación \"Cambio importante en La Esperanza\": la humedad pasó de 72 % a 93 %",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-14",
+   "hu": "HU-015",
+   "escenario": "E2 Acceso desde la notificación (CA03)",
+   "accion": "Pulsar el botón de la notificación",
+   "esperado": "Se abre el detalle de la parcela con la información del cambio",
+   "obtenido": "Se abre \"Parcela La Esperanza\" con humedad 93 % y alerta de clima",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-15",
+   "hu": "HU-006",
+   "escenario": "E1 Vista general de parcelas (CA01-CA02)",
+   "accion": "Ingresar a \"Mis parcelas\" del agricultor",
+   "esperado": "Todas las parcelas en una sola vista con indicador de riesgo",
+   "obtenido": "3 parcelas con indicador: Riesgo alto, Riesgo medio, Riesgo bajo",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-16",
+   "hu": "HU-006",
+   "escenario": "E2 Acceso al detalle (CA03)",
+   "accion": "Seleccionar la parcela con riesgo alto (San José)",
+   "esperado": "Se abre el detalle con la información y problemas de la parcela",
+   "obtenido": "Se abre \"Parcela San José\" con 2 problemas activos",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-17",
+   "hu": "HU-005",
+   "escenario": "E1 Parcela con alertas activas (CA01-CA02)",
+   "accion": "Ingresar al detalle de San José",
+   "esperado": "Estado \"Con alerta\" y lista de problemas activos",
+   "obtenido": "Estado \"Con alerta\"; problemas: Roya amarilla · riesgo alto; Clima favorable para roya · riesgo medio",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-18",
+   "hu": "HU-007",
+   "escenario": "E1 Historial con registros (CA01-CA02)",
+   "accion": "Revisar la sección \"Historial de problemas\" de San José",
+   "esperado": "Lista de problemas con tipo, fecha y estado, ordenada por fecha",
+   "obtenido": "3 registros ordenados del más reciente al más antiguo, con estado Activo/Resuelto",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-19",
+   "hu": "HU-009",
+   "escenario": "E1 Ubicación disponible (CA01-CA02)",
+   "accion": "Pulsar \"Ver ubicación\" en la alerta de roya",
+   "esperado": "Esquema de la parcela con la zona afectada resaltada",
+   "obtenido": "Esquema SVG con zona resaltada: \"Zona afectada: Lote alto, junto al camino\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-20",
+   "hu": "HU-009",
+   "escenario": "E2 Ubicación no disponible (CA03)",
+   "accion": "Pulsar \"Ver ubicación\" en la alerta de clima (sin ubicación)",
+   "esperado": "Mensaje de que no hay ubicación registrada",
+   "obtenido": "Mensaje: \"Esta alerta no tiene una ubicación registrada dentro de la parcela.\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-21",
+   "hu": "HU-010",
+   "escenario": "E1 Alerta con varios registros (CA01-CA03)",
+   "accion": "Pulsar \"Ver evolución\" en la alerta de roya (3 registros)",
+   "esperado": "Línea de tiempo, tendencia y comparación entre fechas",
+   "obtenido": "Línea de tiempo con 3 registros; tendencia \"aumentando\"; tabla comparativa primer vs. último registro",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-22",
+   "hu": "HU-010",
+   "escenario": "E2 Alerta con un solo registro",
+   "accion": "Pulsar \"Ver evolución\" en la alerta de clima (1 registro)",
+   "esperado": "Muestra el registro e indica que se necesitan más datos",
+   "obtenido": "Muestra 1 registro y el mensaje \"Se necesitan más datos…\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-23",
+   "hu": "HU-012",
+   "escenario": "E2 Datos incompletos (CA02)",
+   "accion": "Pulsar \"Guardar acción\" sin indicar el tipo de acción",
+   "esperado": "No se guarda y se indica el campo obligatorio faltante",
+   "obtenido": "Mensaje: \"Falta indicar el tipo de acción realizada.\"; acciones guardadas: 0",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-24",
+   "hu": "HU-012",
+   "escenario": "E1 Acción registrada (CA01, CA03)",
+   "accion": "Elegir \"Poda sanitaria\", fecha de hoy y pulsar \"Guardar acción\"",
+   "esperado": "La acción se registra y aparece en el historial de la alerta",
+   "obtenido": "Acciones registradas en la alerta: \"Acciones registradas  Poda sanitaria · 19 nov. 2026 · Poda de 6 plantas\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-25",
+   "hu": "HU-005",
+   "escenario": "E2 Parcela sin problemas (CA03)",
+   "accion": "Ingresar al detalle de La Esperanza",
+   "esperado": "Estado \"Normal\" y fecha de la última actualización",
+   "obtenido": "Estado \"Normal\"; última actualización: 19 nov. 2026, 12:42 p. m.",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-26",
+   "hu": "HU-007",
+   "escenario": "E2 Parcela sin historial (CA03)",
+   "accion": "Revisar el historial de La Esperanza",
+   "esperado": "Mensaje de que aún no hay registros",
+   "obtenido": "Mensaje: \"Aún no hay registros de problemas en esta parcela.\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-27",
+   "hu": "HU-014",
+   "escenario": "E1 Consulta de condiciones (CA01-CA03)",
+   "accion": "Revisar \"Condiciones ambientales\" de La Esperanza",
+   "esperado": "Temperatura, humedad, hora de la última medición y si está en rango normal",
+   "obtenido": "Muestra 19,5 °C · Temperatura ·  · 71 % · Humedad ·  · Última medición: 19 nov. 2026, 12:42 p. m. ·  · Rango normal para el cult",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-28",
+   "hu": "HU-014",
+   "escenario": "E2 Sin datos disponibles",
+   "accion": "Revisar condiciones de una parcela sin mediciones en las últimas 24 h",
+   "esperado": "Mensaje de que no hay datos y fecha de la última medición",
+   "obtenido": "No hay datos actualizados de los sensores.  Última medición registrada: 16 nov. 2026, 03:42 p. m..",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-29",
+   "hu": "HU-017",
+   "escenario": "E1 Listado de parcelas asignadas (CA01-CA03)",
+   "accion": "Ingresar a \"Mis parcelas\" del técnico",
+   "esperado": "Listado con nombre, productor, estado y última actualización, con acceso al detalle",
+   "obtenido": "5 parcelas; ejemplo: \"Alto Paraíso | Jorge Tantaleán | Con alerta |  | Riesgo medio | 18 nov. 2026, 09:42 a. m. | Ver ficha | de Alto Paraíso\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-30",
+   "hu": "HU-018",
+   "escenario": "E1 Ordenamiento por riesgo (CA01-CA02)",
+   "accion": "Elegir \"Ordenar: Por riesgo\"",
+   "esperado": "Primero riesgo alto, luego medio y bajo, con color y texto",
+   "obtenido": "Orden obtenido: pa1:alto, pa6:alto, pa4:alto, pa5:medio, pa2:medio",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-31",
+   "hu": "HU-018",
+   "escenario": "E2 Parcelas con el mismo riesgo (CA03)",
+   "accion": "Ordenar por riesgo con tres parcelas de riesgo alto; abrir una ficha y recargar",
+   "esperado": "Las de igual riesgo se ordenan por la alerta más reciente y el orden se mantiene",
+   "obtenido": "Riesgo alto ordenado por alerta más reciente: ['pa1', 'pa6', 'pa4']; orden conservado tras navegar (\"riesgo\")",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-32",
+   "hu": "HU-027",
+   "escenario": "E1 Parcelas que requieren visita (CA01-CA03)",
+   "accion": "Consultar \"Visitas pendientes\"",
+   "esperado": "Parcelas con riesgo alto sin atender y el motivo; se diferencian las que siguen en observación",
+   "obtenido": "3 visitas (pa1, pa4, pa6) con motivo; en observación: Pueden seguir en observación: El Mirador (Humedad de 84 % favorable para roya); ",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-33",
+   "hu": "HU-019",
+   "escenario": "E1 Parcela con alertas activas (CA01-CA02)",
+   "accion": "Abrir la ficha de Los Naranjos y revisar \"Alertas activas\"",
+   "esperado": "Lista de alertas con tipo, nivel de riesgo y fecha",
+   "obtenido": "Riesgo alto ·  · Roya amarilla ·  · Inspección del técnico · detectada 18 nov. 2026, 07:42 p. m. · Ladera baja, cerca de la quebrada",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-34",
+   "hu": "HU-020",
+   "escenario": "E1 Condiciones favorables para plagas (CA01-CA03)",
+   "accion": "Revisar condiciones ambientales de Los Naranjos (23 °C, 91 %)",
+   "esperado": "Valores actuales, fecha y hora, y aviso de condiciones favorables",
+   "obtenido": "23 °C · Temperatura ·  · 91 % · Humedad ·  · Última medición: 19 nov. 2026, 08:42 a. m. ·  · Rango de riesgo: condiciones favorables para la aparición de plagas (roya).",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-35",
+   "hu": "HU-030",
+   "escenario": "E1 Consulta de información centralizada (CA01-CA02)",
+   "accion": "Abrir la ficha de Los Naranjos",
+   "esperado": "Datos del productor y parcela, alertas, historial y acciones en una sola vista",
+   "obtenido": "La ficha reúne productor (María Huamán, teléfono), parcela, alertas, historial y acciones",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-36",
+   "hu": "HU-019",
+   "escenario": "E2 Parcela sin alertas (CA03)",
+   "accion": "Abrir la ficha de El Mirador",
+   "esperado": "Mensaje de que no existen alertas activas",
+   "obtenido": "Mensaje: \"No existen alertas activas en esta parcela.\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-37",
+   "hu": "HU-020",
+   "escenario": "E2 Sin mediciones recientes",
+   "accion": "Revisar Alto Paraíso (última medición hace 30 h)",
+   "esperado": "Mensaje de que no hay datos actualizados y la fecha de la última medición",
+   "obtenido": "No hay datos actualizados de los sensores.  Última medición registrada: 18 nov. 2026, 09:42 a. m..",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-38",
+   "hu": "HU-030",
+   "escenario": "E2 Búsqueda sin resultados (CA03)",
+   "accion": "Buscar \"zzz\" y pulsar \"Buscar\"",
+   "esperado": "Mensaje de que no se encontraron resultados",
+   "obtenido": "Mensaje: \"No se encontraron resultados para \"zzz\".\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-39",
+   "hu": "HU-027",
+   "escenario": "E2 Ninguna parcela requiere visita",
+   "accion": "Consultar \"Visitas pendientes\" cuando todas las alertas altas fueron atendidas",
+   "esperado": "Mensaje de que no hay visitas urgentes",
+   "obtenido": "Mensaje: \"No hay visitas urgentes por realizar.\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-40",
+   "hu": "HU-017",
+   "escenario": "E2 Sin parcelas asignadas",
+   "accion": "Ingresar a \"Mis parcelas\" con un técnico sin parcelas asignadas (datos de prueba)",
+   "esperado": "Mensaje de que aún no tiene parcelas asignadas",
+   "obtenido": "Mensaje: \"Aún no tienes parcelas asignadas.\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-41",
+   "hu": "HU-023",
+   "escenario": "E2 Datos obligatorios incompletos (CA02)",
+   "accion": "Pulsar \"Guardar inspección\" sin indicar el estado observado",
+   "esperado": "No se guarda y se indica el campo obligatorio faltante",
+   "obtenido": "Mensaje: \"No se guardó la inspección. Revisa:  Falta el estado observado de la parcela.\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-42",
+   "hu": "HU-024",
+   "escenario": "E2 Plaga no seleccionada",
+   "accion": "Marcar \"Se identificó una plaga\" sin elegir la plaga y guardar",
+   "esperado": "No se guarda y se pide seleccionar la plaga o enfermedad",
+   "obtenido": "Mensaje: \"No se guardó la inspección. Revisa:  Debes seleccionar la plaga o enfermedad identificada.\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-43",
+   "hu": "HU-025",
+   "escenario": "E2 Gravedad no seleccionada (CA03)",
+   "accion": "Registrar el problema sin elegir nivel de gravedad",
+   "esperado": "No se guarda y se pide seleccionar un nivel de gravedad",
+   "obtenido": "Mensaje: \"No se guardó la inspección. Revisa:  Debes seleccionar un nivel de gravedad.\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-44",
+   "hu": "HU-023",
+   "escenario": "E1 Inspección registrada (CA01, CA03)",
+   "accion": "Completar fecha, estado \"Síntomas leves\" y resultado; pulsar \"Guardar inspección\"",
+   "esperado": "Se guarda, se actualiza el estado de la parcela y aparece en el historial",
+   "obtenido": "Inspección guardada. Estado de la parcela: En observación · prioridad de intervención: riesgo medio. · La acción \"Inspección\" aparece en \"Acciones registradas\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-45",
+   "hu": "HU-024",
+   "escenario": "E1 Plaga registrada (CA01-CA03)",
+   "accion": "Elegir \"Roya amarilla\" del catálogo, adjuntar descripción y guardar",
+   "esperado": "El registro se guarda asociado a la parcela y a la fecha de inspección",
+   "obtenido": "Alerta creada: Riesgo alto ·  · Roya amarilla ·  · Inspección del técnico · detectada 19 nov. 2026, 12:00 p. m.",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-46",
+   "hu": "HU-025",
+   "escenario": "E1 Gravedad registrada (CA01-CA02)",
+   "accion": "Seleccionar gravedad \"Alto\" y guardar",
+   "esperado": "Se guarda la gravedad y se actualiza la prioridad de intervención",
+   "obtenido": "Inspección guardada. Estado de la parcela: Con alerta · prioridad de intervención: riesgo alto.",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-47",
+   "hu": "HU-041",
+   "escenario": "E1 Alerta de riesgo alto (CA01-CA02)",
+   "accion": "La parcela El Mirador pasa a riesgo alto tras la inspección",
+   "esperado": "Notificación con productor, parcela y motivo del riesgo",
+   "obtenido": "Riesgo alto en El Mirador ·  · Productor: Rosa Cárdenas. Motivo: Roya amarilla (inspección del técnico). ·  · 19 nov. 2026, 03:42 p. m. ·  · Ver El Mi",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-48",
+   "hu": "HU-041",
+   "escenario": "E2 Acceso desde la notificación (CA03)",
+   "accion": "Pulsar \"Ver El Mirador\" en la notificación",
+   "esperado": "Se abre el detalle de la parcela con la información de la alerta",
+   "obtenido": "Se abre \"Parcela El Mirador\" con la alerta de roya amarilla",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-49",
+   "hu": "HU-036",
+   "escenario": "E1 Información centralizada (CA01-CA03)",
+   "accion": "Buscar \"Rosa\" en Productores; verificar que incluye lo registrado por el técnico",
+   "esperado": "Una sola vista con parcelas, alertas e historial, actualizada automáticamente",
+   "obtenido": "Detalle de Rosa Cárdenas con 3 parcelas, alertas e historial; incluye la roya registrada por el técnico en El Mirador",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-50",
+   "hu": "HU-036",
+   "escenario": "E2 Búsqueda sin resultados",
+   "accion": "Buscar \"zzz\" y pulsar \"Buscar\"",
+   "esperado": "Mensaje de que no se encontraron resultados",
+   "obtenido": "Mensaje: \"No se encontraron resultados para \"zzz\".\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-51",
+   "hu": "HU-033",
+   "escenario": "E1 Listado de parcelas afiliadas (CA01-CA03)",
+   "accion": "Ingresar a \"Parcelas de productores afiliados\"",
+   "esperado": "Listado con productor, estado y nivel de riesgo, con acceso al detalle",
+   "obtenido": "8 parcelas con productor, estado, riesgo, motivo y botón \"Ver detalle\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-52",
+   "hu": "HU-034",
+   "escenario": "E1 Parcelas de riesgo alto (CA01-CA03)",
+   "accion": "Aplicar el filtro \"Riesgo alto\"",
+   "esperado": "Solo parcelas de riesgo alto, resaltadas, con el motivo del riesgo",
+   "obtenido": "pa1: Roya amarilla (diagnóstico por foto); pa6: Roya amarilla (diagnóstico por foto); pa4: Roya amarilla (inspección del técnico)",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-53",
+   "hu": "HU-035",
+   "escenario": "E1 Alertas activas (CA01-CA02)",
+   "accion": "Ingresar a \"Alertas de los productores\"",
+   "esperado": "Lista con productor, parcela, tipo de problema, riesgo y fecha",
+   "obtenido": "5 alertas; ejemplo: Riesgo medio ·  · Clima favorable para roya ·  · Rosa Cárdenas · San José · 19 nov. 2026, 01:42 p. m. ·  · Ver · parcela San José",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-54",
+   "hu": "HU-035",
+   "escenario": "E2 Filtrado de alertas (CA03)",
+   "accion": "Filtrar por riesgo \"Medio\" y luego por productor \"Rosa Cárdenas\"",
+   "esperado": "Solo se muestran las alertas que coinciden con el filtro",
+   "obtenido": "Filtro medio: 2 alertas, todas medio; filtro productor: 2 alertas de Rosa Cárdenas",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-55",
+   "hu": "HU-037",
+   "escenario": "E1 Estado actualizado (CA01-CA02)",
+   "accion": "Abrir el detalle de San José",
+   "esperado": "Estado actual y fecha y hora de la última actualización",
+   "obtenido": "Estado \"Con alerta\"; actualizada: 19 nov. 2026, 01:42 p. m.",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-56",
+   "hu": "HU-037",
+   "escenario": "E2 Información desactualizada (CA03)",
+   "accion": "Abrir el detalle de Rioja Verde (12 días sin registros)",
+   "esperado": "Indica que la información está desactualizada y la fecha del último registro",
+   "obtenido": "Información desactualizada (más de 7 días sin registros); último registro: 07 nov. 2026, 03:42 p. m.",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-57",
+   "hu": "HU-044",
+   "escenario": "E1 Productores con parcelas en riesgo (CA01-CA03)",
+   "accion": "Consultar \"Productores en riesgo\" y abrir las parcelas de Rosa Cárdenas",
+   "esperado": "Lista con cantidad de parcelas en riesgo y nivel más alto; acceso a sus parcelas en riesgo",
+   "obtenido": "4 productores; Rosa Cárdenas: 2 parcelas en riesgo, nivel más alto alto; el detalle muestra solo San José y El Mirador",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-58",
+   "hu": "HU-034",
+   "escenario": "E2 Sin parcelas de riesgo alto",
+   "accion": "Aplicar \"Riesgo alto\" cuando ninguna parcela tiene riesgo alto (datos de prueba)",
+   "esperado": "Mensaje de que no hay parcelas con riesgo alto",
+   "obtenido": "Mensaje: \"No hay parcelas con riesgo alto.\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-59",
+   "hu": "HU-044",
+   "escenario": "E2 Ningún productor en riesgo",
+   "accion": "Consultar \"Productores en riesgo\" sin parcelas en riesgo (datos de prueba)",
+   "esperado": "Mensaje de que no hay productores con parcelas en riesgo",
+   "obtenido": "Mensaje: \"No hay productores con parcelas en riesgo.\"",
+   "estado": "Cumple"
+  },
+  {
+   "id": "PA-60",
+   "hu": "HU-033",
+   "escenario": "E2 Sin parcelas registradas",
+   "accion": "Ingresar a \"Parcelas\" sin parcelas registradas (datos de prueba)",
+   "esperado": "Mensaje de que aún no hay parcelas registradas",
+   "obtenido": "Mensaje: \"Aún no hay parcelas registradas de productores afiliados.\"",
+   "estado": "Cumple"
+  }
+ ],
+ "responsive": [
+  {
+   "vista": "Desktop",
+   "ancho": 1366,
+   "desborde_horizontal_px": 0,
+   "menu_hamburguesa": false,
+   "menu_accesible": true,
+   "tabla_display": "table-row",
+   "objetivos_menores_44px": [],
+   "errores_js": []
+  },
+  {
+   "vista": "Tablet",
+   "ancho": 820,
+   "desborde_horizontal_px": 0,
+   "menu_hamburguesa": true,
+   "menu_accesible": true,
+   "tabla_display": "table-row",
+   "objetivos_menores_44px": [],
+   "errores_js": []
+  },
+  {
+   "vista": "Mobile",
+   "ancho": 390,
+   "desborde_horizontal_px": 0,
+   "menu_hamburguesa": true,
+   "menu_accesible": true,
+   "tabla_display": "block",
+   "objetivos_menores_44px": [],
+   "errores_js": []
+  }
+ ],
+ "accesibilidad": {
+  "lang": "es",
+  "imgs_sin_alt": 0,
+  "controles_sin_etiqueta": [],
+  "landmarks": 4,
+  "h1": 1,
+  "primer_tab": "Saltar al contenido principal",
+  "flecha_en_pestanas": "tab-tecnico:true",
+  "escape_cierra_dialogo": true,
+  "error_formulario_con_texto": "Escribe tu nombre y apellido. / Escribe un correo válido, por ejemplo nombre@correo.com.",
+  "errores_js": []
+ }
+}

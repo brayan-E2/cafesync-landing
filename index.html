@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CaféSync: alerta temprana de roya amarilla para pequeños productores de café del Perú. Diagnóstico por foto, alertas por temperatura y humedad y monitoreo de parcelas.">
+  <meta name="theme-color" content="#2E7D32">
+  <title>CaféSync · Alerta temprana de plagas para el café</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="CaféSync, ir al inicio">
+        <img src="assets/img/logo.svg" alt="" width="36" height="36">
+        <span>CaféSync</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-list" id="menu-principal">
+          <li><a href="#problema">El problema</a></li>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#demo" data-goto-tab="tab-agricultor">Agricultor</a></li>
+          <li><a href="#demo" data-goto-tab="tab-tecnico">Técnico</a></li>
+          <li><a href="#demo" data-goto-tab="tab-cooperativa">Cooperativa</a></li>
+          <li><a class="btn btn-primary btn-sm" href="#contacto">Solicitar piloto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Sistema de alerta temprana para café</p>
+          <h1 id="hero-titulo">Detecta la roya amarilla antes de que se extienda en tu parcela</h1>
+          <p class="lead">CaféSync combina sensores de temperatura y humedad con el diagnóstico por foto desde el celular, para que productores, técnicos y cooperativas actúen a tiempo.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#demo" data-goto-tab="tab-agricultor">Probar el diagnóstico por foto</a>
+            <a class="btn btn-secondary" href="#demo" data-goto-tab="tab-cooperativa">Ver panel de cooperativa</a>
+          </div>
+          <p class="hint">Demostración funcional con datos de ejemplo. Lo que registres se guarda solo en este navegador.</p>
+        </div>
+        <div class="hero-visual">
+          <img src="assets/img/hero.svg" alt="Ilustración: celular mostrando una alerta de riesgo alto de roya junto a una planta de café y un sensor de humedad" width="520" height="420">
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="section section-alt" id="problema" aria-labelledby="problema-titulo">
+      <div class="container">
+        <h2 id="problema-titulo">Un problema que hoy se detecta tarde</h2>
+        <p class="section-intro">En la investigación con productores, técnicos y cooperativas encontramos que la vigilancia depende de recorrer la parcela a pie y de la experiencia de cada persona. Cuando la roya se ve, normalmente ya se extendió.</p>
+        <ul class="card-grid three" role="list">
+          <li class="card">
+            <img class="card-icon" src="assets/img/icon-agricultor.svg" alt="" width="48" height="48">
+            <h3>Pequeños agricultores</h3>
+            <p>Revisar planta por planta en terrenos con pendiente toma mucho tiempo, y al inicio varias enfermedades se parecen.</p>
+          </li>
+          <li class="card">
+            <img class="card-icon" src="assets/img/icon-tecnico.svg" alt="" width="48" height="48">
+            <h3>Técnicos de campo</h3>
+            <p>Las parcelas están dispersas y no hay datos ordenados para decidir cuál visitar primero.</p>
+          </li>
+          <li class="card">
+            <img class="card-icon" src="assets/img/icon-cooperativa.svg" alt="" width="48" height="48">
+            <h3>Cooperativas y empresas</h3>
+            <p>Se enteran del problema cuando el productor avisa, y una detección tardía afecta el volumen y la calidad acopiada.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section" id="como-funciona" aria-labelledby="como-titulo">
+      <div class="container">
+        <h2 id="como-titulo">Cómo funciona</h2>
+        <ol class="steps" role="list">
+          <li class="step">
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3>Los sensores miden el clima de la parcela</h3>
+            <p>Si la humedad y la temperatura favorecen la roya, recibes un aviso con la zona que conviene revisar primero.</p>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3>Tomas una foto de la hoja sospechosa</h3>
+            <p>La app te muestra el posible problema, su nivel de riesgo y qué hacer, en palabras sencillas.</p>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3>Técnicos y cooperativa ven el mismo dato</h3>
+            <p>Las parcelas se ordenan por riesgo para priorizar visitas y coordinar el apoyo técnico.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- DEMO -->
+    <section class="section section-alt" id="demo" aria-labelledby="demo-titulo">
+      <div class="container">
+        <div class="demo-head">
+          <div>
+            <h2 id="demo-titulo">Pruébalo según tu rol</h2>
+            <p class="section-intro">Elige un perfil. Las tres vistas comparten la misma información: lo que registra el técnico se refleja en el panel de la cooperativa.</p>
+          </div>
+          <button type="button" class="btn btn-ghost btn-sm" id="btn-reset">Restablecer datos de ejemplo</button>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Perfiles de usuario">
+          <button type="button" role="tab" id="tab-agricultor" aria-controls="panel-agricultor" aria-selected="true">Agricultor</button>
+          <button type="button" role="tab" id="tab-tecnico" aria-controls="panel-tecnico" aria-selected="false" tabindex="-1">Técnico de campo</button>
+          <button type="button" role="tab" id="tab-cooperativa" aria-controls="panel-cooperativa" aria-selected="false" tabindex="-1">Cooperativa</button>
+        </div>
+
+        <!-- PANEL AGRICULTOR -->
+        <div class="tab-panel" role="tabpanel" id="panel-agricultor" aria-labelledby="tab-agricultor" tabindex="0">
+          <p class="panel-user">Vista de <strong>Rosa Cárdenas</strong>, productora de San Ignacio (Cajamarca).</p>
+
+          <div class="panel-grid">
+            <!-- Diagnóstico -->
+            <section class="block" id="diagnostico" aria-labelledby="diag-titulo">
+              <h3 id="diag-titulo">Diagnóstico por foto</h3>
+              <p class="muted">Toma una foto de la hoja por el envés, con buena luz y de cerca.</p>
+              <div class="upload">
+                <label class="btn btn-primary" for="foto-input">
+                  <img src="assets/img/icon-camara.svg" alt="" width="20" height="20"> Tomar o elegir foto
+                </label>
+                <input class="visually-hidden-input" type="file" id="foto-input" accept="image/*" capture="environment" aria-describedby="foto-ayuda">
+                <p id="foto-ayuda" class="muted small">En el celular se abre la cámara; en la computadora puedes elegir una imagen de tu galería.</p>
+              </div>
+              <fieldset class="samples">
+                <legend>¿No tienes una foto a la mano? Usa una de ejemplo:</legend>
+                <div class="chip-row">
+                  <button type="button" class="chip" data-sample="roya">Hoja con manchas naranjas</button>
+                  <button type="button" class="chip" data-sample="inicial">Hoja con pocas manchas</button>
+                  <button type="button" class="chip" data-sample="sana">Hoja sana</button>
+                  <button type="button" class="chip" data-sample="marron">Hoja con manchas marrones</button>
+                  <button type="button" class="chip" data-sample="oscura">Foto oscura</button>
+                  <button type="button" class="chip" data-sample="borrosa">Foto borrosa</button>
+                  <button type="button" class="chip" data-sample="nohoja">Foto sin hoja</button>
+                </div>
+              </fieldset>
+              <div class="preview" id="preview" hidden>
+                <figure>
+                  <img id="preview-img" alt="Vista previa de la foto seleccionada" src="data:,">
+                  <figcaption class="small muted">Vista previa. Revisa que la hoja se vea clara antes de analizar.</figcaption>
+                </figure>
+                <div class="preview-actions">
+                  <button type="button" class="btn btn-primary" id="btn-analizar">Analizar</button>
+                  <button type="button" class="btn btn-secondary" id="btn-cambiar-foto">Cambiar foto</button>
+                </div>
+              </div>
+              <div id="diag-status" class="status" role="status" aria-live="polite"></div>
+              <div id="diag-resultado" class="result" hidden tabindex="-1"></div>
+            </section>
+
+            <!-- Notificaciones y sensores -->
+            <section class="block" id="sensores" aria-labelledby="sens-titulo">
+              <h3 id="sens-titulo">Sensores y avisos</h3>
+              <p class="muted">Simula una nueva lectura de los sensores de una parcela para ver cómo se generan los avisos.</p>
+              <form id="form-lectura" class="form" novalidate>
+                <div class="field">
+                  <label for="lectura-parcela">Parcela</label>
+                  <select id="lectura-parcela" name="parcela"></select>
+                </div>
+                <div class="field-row">
+                  <div class="field">
+                    <label for="lectura-temp">Temperatura (°C)</label>
+                    <input type="number" id="lectura-temp" name="temp" min="0" max="45" step="0.1" value="22" inputmode="decimal" aria-describedby="umbral-ayuda">
+                  </div>
+                  <div class="field">
+                    <label for="lectura-hum">Humedad relativa (%)</label>
+                    <input type="number" id="lectura-hum" name="hum" min="0" max="100" step="1" value="93" inputmode="numeric" aria-describedby="umbral-ayuda">
+                  </div>
+                </div>
+                <p class="small muted" id="umbral-ayuda">Umbral de riesgo para roya: humedad de 90 % o más con temperatura entre 18 y 28 °C (riesgo alto); humedad de 80 % o más (riesgo medio).</p>
+                <div class="field-error" id="lectura-error" role="alert"></div>
+                <button type="submit" class="btn btn-primary">Enviar lectura</button>
+              </form>
+              <h4 class="subhead">Notificaciones <span class="badge-count" id="notif-count" aria-label="0 notificaciones">0</span></h4>
+              <ul class="notif-list" id="notif-agricultor" aria-live="polite"></ul>
+            </section>
+          </div>
+
+          <section class="block" aria-labelledby="mis-parcelas-titulo">
+            <h3 id="mis-parcelas-titulo">Mis parcelas</h3>
+            <p class="muted">Toca una parcela para ver su estado, clima, alertas e historial.</p>
+            <ul class="parcel-grid" id="parcelas-agricultor" role="list"></ul>
+          </section>
+        </div>
+
+        <!-- PANEL TECNICO -->
+        <div class="tab-panel" role="tabpanel" id="panel-tecnico" aria-labelledby="tab-tecnico" tabindex="0" hidden>
+          <p class="panel-user">Vista de <strong>Ing. Carla Mendoza</strong>, técnica de campo de la cooperativa.</p>
+
+          <section class="block" aria-labelledby="visitas-titulo">
+            <h3 id="visitas-titulo">Visitas pendientes</h3>
+            <div id="visitas-pendientes"></div>
+          </section>
+
+          <section class="block" aria-labelledby="sup-titulo">
+            <div class="block-head">
+              <h3 id="sup-titulo">Mis parcelas</h3>
+              <div class="field inline">
+                <label for="orden-tecnico">Ordenar</label>
+                <select id="orden-tecnico">
+                  <option value="nombre">Por nombre</option>
+                  <option value="riesgo">Por riesgo</option>
+                  <option value="actualizacion">Por última actualización</option>
+                </select>
+              </div>
+            </div>
+            <form class="search" id="buscar-tecnico" role="search" aria-label="Buscar productor o parcela">
+              <label for="buscar-tecnico-input" class="sr-only">Buscar productor o parcela</label>
+              <input type="search" id="buscar-tecnico-input" placeholder="Buscar productor o parcela" autocomplete="off">
+              <button type="submit" class="btn btn-secondary">Buscar</button>
+            </form>
+            <div id="buscar-tecnico-msg" class="status" role="status" aria-live="polite"></div>
+            <div class="table-wrap">
+              <table class="data-table" id="tabla-tecnico">
+                <caption class="sr-only">Parcelas supervisadas</caption>
+                <thead>
+                  <tr><th scope="col">Parcela</th><th scope="col">Productor</th><th scope="col">Estado</th><th scope="col">Riesgo</th><th scope="col">Última actualización</th><th scope="col"><span class="sr-only">Acciones</span></th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <p id="tecnico-vacio" class="empty" hidden>Aún no tienes parcelas asignadas.</p>
+          </section>
+        </div>
+
+        <!-- PANEL COOPERATIVA -->
+        <div class="tab-panel" role="tabpanel" id="panel-cooperativa" aria-labelledby="tab-cooperativa" tabindex="0" hidden>
+          <p class="panel-user">Vista de <strong>Cooperativa Agraria Valle Alto</strong> · área de acopio y calidad.</p>
+
+          <ul class="kpis" id="kpis" role="list"></ul>
+
+          <section class="block notice-block" aria-labelledby="alto-titulo">
+            <h3 id="alto-titulo">Avisos de riesgo alto</h3>
+            <ul class="notif-list" id="notif-cooperativa" aria-live="polite"></ul>
+          </section>
+
+          <section class="block" aria-labelledby="afiliadas-titulo">
+            <div class="block-head">
+              <h3 id="afiliadas-titulo">Parcelas de productores afiliados</h3>
+              <div class="chip-row" role="group" aria-label="Filtrar parcelas por riesgo">
+                <button type="button" class="chip" data-filtro-riesgo="todos" aria-pressed="true">Todas</button>
+                <button type="button" class="chip" data-filtro-riesgo="alto" aria-pressed="false">Riesgo alto</button>
+                <button type="button" class="chip" data-filtro-riesgo="medio" aria-pressed="false">Riesgo medio</button>
+                <button type="button" class="chip" data-filtro-riesgo="bajo" aria-pressed="false">Riesgo bajo</button>
+              </div>
+            </div>
+            <div id="afiliadas-filtro-msg" class="status" role="status" aria-live="polite"></div>
+            <div class="table-wrap">
+              <table class="data-table" id="tabla-cooperativa">
+                <caption class="sr-only">Parcelas de productores afiliados</caption>
+                <thead>
+                  <tr><th scope="col">Parcela</th><th scope="col">Productor</th><th scope="col">Estado</th><th scope="col">Riesgo</th><th scope="col">Motivo</th><th scope="col">Última actualización</th><th scope="col"><span class="sr-only">Acciones</span></th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <p id="cooperativa-vacio" class="empty" hidden>Aún no hay parcelas registradas de productores afiliados.</p>
+          </section>
+
+          <div class="panel-grid">
+            <section class="block" aria-labelledby="alertas-coop-titulo">
+              <h3 id="alertas-coop-titulo">Alertas de los productores</h3>
+              <div class="filters">
+                <div class="field">
+                  <label for="f-alerta-productor">Productor</label>
+                  <select id="f-alerta-productor"><option value="">Todos</option></select>
+                </div>
+                <div class="field">
+                  <label for="f-alerta-parcela">Parcela</label>
+                  <select id="f-alerta-parcela"><option value="">Todas</option></select>
+                </div>
+                <div class="field">
+                  <label for="f-alerta-riesgo">Riesgo</label>
+                  <select id="f-alerta-riesgo">
+                    <option value="">Todos</option><option value="alto">Alto</option><option value="medio">Medio</option><option value="bajo">Bajo</option>
+                  </select>
+                </div>
+              </div>
+              <ul class="alert-list" id="alertas-cooperativa"></ul>
+            </section>
+
+            <section class="block" aria-labelledby="prod-riesgo-titulo">
+              <h3 id="prod-riesgo-titulo">Productores en riesgo</h3>
+              <ul class="producer-list" id="productores-riesgo"></ul>
+            </section>
+          </div>
+
+          <section class="block" aria-labelledby="productores-titulo">
+            <h3 id="productores-titulo">Productores y parcelas</h3>
+            <form class="search" id="buscar-coop" role="search" aria-label="Buscar productor o parcela en la cooperativa">
+              <label for="buscar-coop-input" class="sr-only">Buscar productor o parcela</label>
+              <input type="search" id="buscar-coop-input" placeholder="Buscar productor o parcela" autocomplete="off">
+              <button type="submit" class="btn btn-secondary">Buscar</button>
+            </form>
+            <div id="buscar-coop-msg" class="status" role="status" aria-live="polite"></div>
+            <div id="productor-detalle" tabindex="-1"></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="container contact-grid">
+        <div>
+          <h2 id="contacto-titulo">Lleva CaféSync a tu cooperativa</h2>
+          <p class="section-intro">Estamos buscando cooperativas para un piloto con sensores en fincas de productores afiliados. Déjanos tus datos y te contactamos.</p>
+        </div>
+        <form id="form-contacto" class="form card" novalidate>
+          <div class="field">
+            <label for="c-nombre">Nombre y apellido <span aria-hidden="true">*</span></label>
+            <input id="c-nombre" name="nombre" type="text" autocomplete="name" required aria-required="true">
+            <p class="field-error" id="c-nombre-error"></p>
+          </div>
+          <div class="field">
+            <label for="c-correo">Correo electrónico <span aria-hidden="true">*</span></label>
+            <input id="c-correo" name="correo" type="email" autocomplete="email" required aria-required="true">
+            <p class="field-error" id="c-correo-error"></p>
+          </div>
+          <div class="field">
+            <label for="c-perfil">Soy</label>
+            <select id="c-perfil" name="perfil">
+              <option>Productor</option><option>Técnico de campo</option><option>Cooperativa o empresa</option>
+            </select>
+          </div>
+          <p class="small muted">* Campos obligatorios. Usamos tus datos solo para responder esta solicitud.</p>
+          <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+          <div id="contacto-ok" class="status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>CaféSync</strong> · Proyecto académico del curso HCI for UX Design (1ASI0784), UPC 2026-20.</p>
+      <p class="small">Los diagnósticos de esta demostración son orientativos y no reemplazan la evaluación de un técnico agrónomo.</p>
+    </div>
+  </footer>
+
+  <!-- Ficha de parcela -->
+  <dialog id="ficha" aria-labelledby="ficha-titulo">
+    <div class="dialog-head">
+      <h2 id="ficha-titulo">Ficha de parcela</h2>
+      <button type="button" class="icon-btn" id="ficha-cerrar" aria-label="Cerrar ficha">&times;</button>
+    </div>
+    <div id="ficha-cuerpo" class="dialog-body"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/diagnostico.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
