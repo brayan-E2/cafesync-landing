@@ -44,7 +44,7 @@ python tests/acceptance_test.py https://<usuario>.github.io/cafesync-landing/
 
 El script genera `tests/resultados_aceptacion.json` con el resultado de cada escenario (Cumple / No cumple), la verificación responsive (Desktop 1366 px, Tablet 820 px, Mobile 390 px) y comprobaciones de accesibilidad.
 
-## Notas
+Notas
 
 - El diagnóstico por foto es una demostración: evalúa luz y nitidez de la foto y estima la proporción de manchas naranjas o marrones sobre la hoja. No reemplaza el modelo de visión computacional previsto ni la evaluación de un técnico.
 - Lo que se registra se guarda solo en el navegador (`localStorage`). El botón **Restablecer datos de ejemplo** vuelve al estado inicial.
